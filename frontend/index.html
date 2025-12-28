@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoScan AI | Land & Soil Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo">ECO<b>SCAN</b></div>
+        <div class="nav-links">
+            <button onclick="showPage('home')">Home</button>
+            <button onclick="showPage('veg-page')">Vegetation</button>
+            <button onclick="showPage('soil-page')">Soil Type</button>
+        </div>
+    </nav>
+
+    <section id="home" class="page active">
+        <div class="hero">
+            <h1>Environmental Intelligence</h1>
+            <p>Advanced Deep Learning tools for Vegetation Segmentation (U-Net) and Soil Classification (YOLOv8).</p>
+            <div class="btn-container">
+                <button class="primary-btn" onclick="showPage('veg-page')">Analyze Vegetation</button>
+                <button class="primary-btn" onclick="showPage('soil-page')">Identify Soil Type</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="veg-page" class="page">
+        <div class="container">
+            <h2>Vegetation Segmentation</h2>
+            <p>Upload a satellite or ground image to detect green cover percentage.</p>
+            <div class="upload-area" id="drop-zone-veg">
+                <input type="file" id="veg-input" hidden accept="image/*">
+                <label for="veg-input" class="action-btn">Click to Upload Image</label>
+                <img id="veg-preview" class="preview-img" src="" alt="">
+            </div>
+            <button class="action-btn" onclick="processAI('vegetation')">Run U-Net Analysis</button>
+            <div id="veg-result" class="result-card"></div>
+        </div>
+    </section>
+
+    <section id="soil-page" class="page">
+        <div class="container">
+            <h2>Soil Type Detection</h2>
+            <p>Upload a soil sample image to classify using YOLOv8.</p>
+            <div class="upload-area" id="drop-zone-soil">
+                <input type="file" id="soil-input" hidden accept="image/*">
+                <label for="soil-input" class="action-btn">Click to Upload Image</label>
+                <img id="soil-preview" class="preview-img" src="" alt="">
+            </div>
+            <button class="action-btn" onclick="processAI('soil')">Run YOLO Classification</button>
+            <div id="soil-result" class="result-card"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

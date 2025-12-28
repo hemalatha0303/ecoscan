@@ -1,0 +1,59 @@
+/* style.css */
+:root {
+    --primary: #2e7d32; /* Deep Green */
+    --accent: #4caf50;  /* Bright Green */
+    --black: #121212;
+    --white: #ffffff;
+    --gray: #f4f4f4;
+}
+
+body {
+    margin: 0; font-family: 'Inter', sans-serif;
+    background-color: var(--white); color: var(--black);
+}
+
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 50px; background: var(--black); color: var(--white);
+}
+
+.logo { font-size: 1.5rem; letter-spacing: 2px; }
+.logo b { color: var(--accent); }
+
+.nav-links button {
+    background: none; border: none; color: var(--white);
+    margin-left: 20px; cursor: pointer; font-weight: 500;
+}
+
+.page { display: none; padding: 80px 50px; min-height: 80vh; text-align: center; }
+.page.active { display: block; animation: fadeIn 0.5s ease; }
+
+.hero { max-width: 800px; margin: 0 auto; padding-top: 50px; }
+h1 { font-size: 4rem; margin-bottom: 10px; color: var(--black); }
+
+.primary-btn {
+    background: var(--primary); color: white; border: none;
+    padding: 15px 40px; font-size: 1.1rem; cursor: pointer;
+    margin: 10px; border-radius: 5px; transition: 0.3s;
+}
+
+.primary-btn:hover { background: var(--black); }
+
+.upload-area {
+    border: 2px dashed var(--primary); padding: 40px;
+    margin: 20px auto; max-width: 500px; border-radius: 10px;
+}
+
+.preview-img { max-width: 100%; border-radius: 10px; margin-top: 15px; display: none; }
+
+.action-btn {
+    background: var(--black); color: white; padding: 12px 30px;
+    border: none; border-radius: 5px; cursor: pointer;
+}
+
+.result-card {
+    margin-top: 30px; font-weight: bold; font-size: 1.2rem;
+    color: var(--primary); padding: 20px;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
