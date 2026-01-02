@@ -107,6 +107,7 @@ def predict_soil():
 # ---------------------------------------------------------
 # RUN SERVER
 # ---------------------------------------------------------
-if __name__ == '__main__':
-    # Host 0.0.0.0 makes the server accessible on your local network
-    app.run(host='0.0.0.0', port=5000, debug=False)
+if __name__ == "__main__":
+    # Render will pass the correct port via the PORT environment variable
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
